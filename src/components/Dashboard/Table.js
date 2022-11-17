@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSVLink } from 'react-csv';
 
 const Table = ({ employees, handleEdit, handleDelete }) => {
   employees.forEach((employee, i) => {
@@ -11,8 +12,19 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
     minimumFractionDigits: null,
   });
 
+  const headers =[
+    {label:'First Name' , key: 'firstName'},
+    {label:'Last Name' , key: 'lastName'},
+    {label:'Email' , key: 'email'},
+    {label:'Salary' , key: 'salary'},
+    {label:'Date' , key: 'date'},
+]
+
   return (
     <div className="contain-table">
+      <CSVLink data={employees} headers={headers} filename='Exported_Data'>
+      <button className='btn btn-primary mb-2'>Export</button>
+      </CSVLink>
       <table className="striped-table">
         <thead>
           <tr>
