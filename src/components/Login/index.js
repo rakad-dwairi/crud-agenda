@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 const Login = ({ setIsAuthenticated }) => {
   const adminEmail = 'admin@example.com';
   const adminPassword = '123456789';
-
   const [email, setEmail] = useState('admin@example.com');
   const [password, setPassword] = useState('123456789');
 
